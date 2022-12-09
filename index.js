@@ -12,6 +12,8 @@ var b = 10;                                    //variavel para controle de quant
 var filtro_escolhido=""
 
 
+const name = document.querySelector(".textopc");
+
 function consultaDadosViaCep(){                //funcao que realiza o fetch
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${filtro_escolhido}`, options)
 	.then((response) => {
@@ -23,12 +25,15 @@ function consultaDadosViaCep(){                //funcao que realiza o fetch
 
 const printar = (resultado) =>{                //Funcao que printa os dados da API na tela do usuario
     for(a;a<b;a++){                            //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
-        //console.log(resultado[a].freetogame_profile_url);//o botao os valores das variaveis irao ser alteradas para que seja printado mais
-        dive.innerHTML += 
-        `<p>${resultado[a].title}</p>
-        <a href="${resultado[a].freetogame_profile_url}"target="_blank"><img src="${resultado[a].thumbnail}">`
-
-    }                                          //Dentro do for eu uso a variavel dive e altero o conteudo do 
+        console.log(resultado[a].title);       //o botao os valores das variaveis irao ser alteradas para que seja printado mais
+        dive.innerHTML += `
+        <div class="vitrine">
+        <img class="fotojogo" src="${resultado[a].thumbnail}">
+        <p class="nomedojogo">${resultado[a].title}</p>                 
+                            
+                            </div>`
+    }        
+                                          //Dentro do for eu uso a variavel dive e altero o conteudo do 
     }                                          //HTML dela, inserindo o nome do jogo,imagem e link para o site      
     function apagar(){
         dive.innerHTML = "";                  //Funcao para apagar o conteudo escrito dentro do HTML da variavel dive, utilizado para caso
@@ -98,9 +103,6 @@ function filtrar(filtro_botao){
 
     }
     
-<<<<<<< Updated upstream
-} 
-=======
 } 
 
 function mostrarAtivo(tag){
@@ -110,8 +112,6 @@ function mostrarAtivo(tag){
     {
        tag_a[i].style.color = "";
     }
-       tag.style.color = "#660920";
+       tag.style.color = "#ff0000";
        
 }
-
->>>>>>> Stashed changes

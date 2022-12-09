@@ -2,20 +2,24 @@ body{
     background-color: #2E000C;
     color: white;
 }
-<<<<<<< Updated upstream
+
 #botao{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    align-self: center;
-}
+    width: 339px;
+    height: 70px;
+    left: 1016px;
+    top: 1351px;
+    color:white;
+    background: #600117;
+    border-radius: 12px;
+    cursor:pointer;
+  }
 #filtros{
     position: relative;
     display: inline;
     width: 70px;
     height: 20px;
 }
-=======
+
 body {
   background-color: #2e000c;
 }
@@ -75,11 +79,11 @@ main {
   border-radius: 4vw;
 }
 .banner {
-  border-radius: 4vw;
+  border-radius: 2vw;
   width: 60vw;
   height: 25vw;
-
-  background-color: rgb(255, 0, 0);
+  box-shadow: 2px 2px 10px black;
+  
 }
 
 
@@ -194,4 +198,4 @@ ul{
 }
 
 
->>>>>>> Stashed changes
+
