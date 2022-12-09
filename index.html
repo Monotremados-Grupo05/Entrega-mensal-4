@@ -8,77 +8,103 @@
     <title>Document</title>
   </head>
   <body>
-    
     <div class="tudo">
-        <nav>
-            <div class="opcs1">
-                <p>text</p>
-                <p>text</p>
-                <p>text</p>
+      <nav>
+
+        <input class="pesquisa" type="text" placeholder="Pesquisa">
     
-            </div>
-        </nav>
+      </nav>
       <aside>
         <div class="opcs2">
-            <div class="fotos">
-                <img class="img" src="./img/bola_copa.webp" alt="" height="40px" width="40px">
-            
-            <p class="textopc">Moba</p>
-        </div>
-        <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
+          <div class="fotos">
+            <img
+              class="img"
+              src="./img/bola_copa.webp"
+              alt=""
+              height="40px"
+              width="40px"
+            />
+
+          
+            <button class="textopc" onclick="filtrar('Moba')">MOBA</input>
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
+
+            <button class="textopc" onclick="filtrar('Survival')">SURVIVAL</button>
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
+
+
+            <button class="textopc" onclick="filtrar('Fighting')">FIGHTING</button> 
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
+
         
-        <p class="textopc">Survival</p>
-    </div>
-    <div class="fotos">
-        <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
-    
-    <p class="textopc">Fighting</p>
-</div>   
-<div class="fotos">
-    <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
+            <button class="textopc" class="textopc"onclick="filtrar('Shooting')">SHOOTING</button> 
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
 
-<p class="textopc">Shooting</p>
-</div>   
-<div class="fotos">
-    <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
+            <button class="textopc" onclick="filtrar('Fantasy')">FANTASY</button> 
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
 
-<p class="textopc">Fantasy</p>
-</div>   
-<div class="fotos">
-    <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
+            <button class="textopc" onclick="filtrar('Card game')">CARD GAME</button> 
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
 
-<p class="textopc">Card</p>
-</div>   
-<div class="fotos">
-    <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
+            <button class="textopc" onclick="filtrar('Strategy')">STRATEGY</button> 
+          </div>
+          <div class="fotos">
+            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
 
-<p class="textopc">Strategy</p>
-</div>   
-<div class="fotos">
-    <img src="./img/bola_copa.webp" alt="" height="40px" width="40px">
-
-<p class="textopc">Sports</p>
-</div>   
+            <button class="textopc" onclick="filtrar('Sports')">SPORTS</button>  
+            
+                
+                
               
-
-
+                
+                
+                
+                
+          </div>
         </div>
       </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <main>
-          
         <div class="banner">
-            <img class="imgtest" src="./img/bola_copa.webp" alt="" >
+          <img class="imgtest" src="./img/bola_copa.webp" alt="" />
         </div>
-       
+
         <center>
-            <h1>Jogos de destaque</h1>
+          <h1>Jogos de destaque</h1>
         </center>
-        <div id="produtos">
-            
-        </div>
+        <div id="dive"></div>
+        <button onclick="adicionar()" id="botao">ADICIONAR</button>
       </main>
     </div>
     <script src="./index.js"></script>
+
   </body>
 </html>
