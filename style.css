@@ -84,9 +84,9 @@ h1 {
 .textopc {
   color: aliceblue;
   font-size: 200%;
-  background-color: blue;
   border: 0;
   cursor: pointer;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #dive {
@@ -130,3 +130,46 @@ p {
   justify-content: space-around;
   margin-bottom: 0.5vw;
 }
+
+#botao{
+  width: 339px;
+  height: 70px;
+  left: 1016px;
+  top: 1351px;
+  color:white;
+  background: #600117;
+  border-radius: 12px;
+  cursor:pointer;
+}
+
+
+.aw-menu > li a:hover, .aw-menu > li a:focus {
+  background-color: #dfdfdf;
+}
+.aw-menu > li a {
+  background-color:transparent
+}
+
+#lista_menu{
+  text-decoration:none;
+  color:#FFFFFF;
+}
+a{
+  text-decoration:none;
+  color:#FFFFFF;
+}
+
+ul{
+  list-style: none;
+}
+
+#Ulnav{
+  color:white;
+  float:left;
+  display:flex;
+  justify-content: space-around;
+  width:100vw;
+  align-items:center;
+}
+
+

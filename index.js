@@ -12,6 +12,8 @@ var b = 10;                                    //variavel para controle de quant
 var filtro_escolhido=""
 
 
+const name = document.querySelector(".textopc");
+
 function consultaDadosViaCep(){                //funcao que realiza o fetch
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${filtro_escolhido}`, options)
 	.then((response) => {
@@ -102,3 +104,15 @@ function filtrar(filtro_botao){
     }
     
 } 
+
+function mostrarAtivo(tag){
+    var tag_li = document.getElementById('lista_menu');
+    var tag_a = tag_li.getElementsByTagName('a');
+    for (i=0; i<tag_a.length; i++ )
+    {
+       tag_a[i].style.color = "";
+    }
+       tag.style.color = "#ff0000";
+       
+}
+

@@ -10,12 +10,15 @@
   <body>
     <div class="tudo">
       <nav>
-
+        <ul id="Ulnav">
+          <li>PC</li>
+          <li>Browser</li>
+          <li>Console</li>
+        </ul>
         <input class="pesquisa" type="text" placeholder="Pesquisa">
-    
       </nav>
       <aside>
-        <div class="opcs2">
+        <section class="opcs2">
           <div class="fotos">
             <img
               class="img"
@@ -25,73 +28,18 @@
               width="40px"
             />
 
-          
-            <button class="textopc" onclick="filtrar('Moba')">MOBA</input>
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-            <button class="textopc" onclick="filtrar('Survival')">SURVIVAL</button>
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-
-            <button class="textopc" onclick="filtrar('Fighting')">FIGHTING</button> 
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-        
-            <button class="textopc" class="textopc"onclick="filtrar('Shooting')">SHOOTING</button> 
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-            <button class="textopc" onclick="filtrar('Fantasy')">FANTASY</button> 
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-            <button class="textopc" onclick="filtrar('Card game')">CARD GAME</button> 
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-            <button class="textopc" onclick="filtrar('Strategy')">STRATEGY</button> 
-          </div>
-          <div class="fotos">
-            <img src="./img/bola_copa.webp" alt="" height="40px" width="40px" />
-
-            <button class="textopc" onclick="filtrar('Sports')">SPORTS</button>  
-            
-                
-                
-              
-                
-                
-                
-                
-          </div>
+            <ul id="lista_menu">
+              <li class="textopc"><a href="#" onclick="filtrar('Moba');mostrarAtivo(this);">MOBA</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Survival');mostrarAtivo(this);">Survival</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Fighting');mostrarAtivo(this);">Fighting</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Shooting');mostrarAtivo(this);">Shooting</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Fantasy');mostrarAtivo(this);">Fantasy</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Card game');mostrarAtivo(this);">Card Game</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Strategy');mostrarAtivo(this);">Strategy</a></li>
+              <li class="textopc"><a href="#" onclick="filtrar('Sports');mostrarAtivo(this);">Sports</a></li>
+           </ul>
         </div>
       </aside>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <main>
         <div class="banner">
           <img class="imgtest" src="./img/bola_copa.webp" alt="" />
@@ -101,7 +49,7 @@
           <h1>Jogos de destaque</h1>
         </center>
         <div id="dive"></div>
-        <button onclick="adicionar()" id="botao">ADICIONAR</button>
+        <button onclick="adicionar()" id="botao">Carregar Mais</button>
       </main>
     </div>
     <script src="./index.js"></script>
