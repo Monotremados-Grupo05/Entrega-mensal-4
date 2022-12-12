@@ -9,17 +9,9 @@ const options = {
 const dive = document.getElementById("dive");  //variavel que recebe o getelementbyid para nao ter que ficar escrevendo isso toda vez
 var a = 0;                                     //variavel para controle de quantidade de jogos que irao aparecer na tela
 var b = 10;                                    //variavel para controle de quantidade de jogos que irao aparecer na tela
-var filtro_escolhido=""
+var filtro_escolhido="";
+var plataforma_escolhida="all";
 
-
-function consultaDadosViaCep(){                //funcao que realiza o fetch
-    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${filtro_escolhido}`, options)
-	.then((response) => {
-        response.json()                        //Transformo os dados em json
-            .then(data => printar(data));      // envio os dados chamando funcao printar indicando o parametro data (sendo os proprios dados)
-    })
-        .catch(()=> alert("ERRO"));            //Alerta de erro, caso encontre algum
-}
 
 const printar = (resultado) =>{                //Funcao que printa os dados da API na tela do usuario
     for(a;a<b;a++){                            //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
@@ -29,73 +21,115 @@ const printar = (resultado) =>{                //Funcao que printa os dados da A
         <a href="${resultado[a].freetogame_profile_url}"target="_blank"><img src="${resultado[a].thumbnail}">`
 
     }                                          //Dentro do for eu uso a variavel dive e altero o conteudo do 
-    }                                          //HTML dela, inserindo o nome do jogo,imagem e link para o site      
-    function apagar(){
+}                                              //HTML dela, inserindo o nome do jogo,imagem e link para o site
+
+ConsultarJogos();                         //Aqui nesse caso eu to chamando a funcao apenas
+
+function ConsultarJogos(){                //funcao que realiza o fetch
+    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataforma_escolhida}${filtro_escolhido}`, options)
+	.then((response) => {
+        response.json()                        //Transformo os dados em json
+            .then(data => printar(data));      // envio os dados chamando funcao printar indicando o parametro data (sendo os proprios dados)
+    })
+        .catch(()=> alert("ERRO"));            //Alerta de erro, caso encontre algum
+}
+   
+function apagar(){
         dive.innerHTML = "";                  //Funcao para apagar o conteudo escrito dentro do HTML da variavel dive, utilizado para caso
         a=0; b=10;
-    }                                         //o usuario modifique o padrao de aparecimento sei la vai apagar tudo e escrever de outro jeito
+}                                         //o usuario modifique o padrao de aparecimento sei la vai apagar tudo e escrever de outro jeito
 
-    consultaDadosViaCep();                   //Aqui nesse caso eu to chamando a funcao apenas
 
-    function adicionar(){                   //Funcao adicionar para alterar as variaveis que definem a quantidade de jogos que irao aparecer
+function adicionar(){                   //Funcao adicionar para alterar as variaveis que definem a quantidade de jogos que irao aparecer
     a = b;                                  // na tela do usuario, ela eh chamada ao clicar no botao carregar mais
     b = b+10;                               //Alem de alterar as variaveis ela chama a funcao consultardadosviacep pra printar novamente
-    consultaDadosViaCep();
+    ConsultarJogos();
 }
-function filtrar(filtro_botao){
-    console.log(filtro_botao);
 
+function filtrar(filtro_botao){
     switch(filtro_botao){
+        case('Home'):
+            filtro_escolhido = "&sort-by=popularity";
+            apagar();
+            ConsultarJogos();
+        break;
     
         case('Moba'):
-            filtro_escolhido = "?category=moba";
+            filtro_escolhido = "&category=moba";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos();
         break;
 
         case('Survival'):
-            filtro_escolhido = "?category=survival";
+            filtro_escolhido = "&category=survival";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos();
         break;
 
         case('Fighting'):
-            filtro_escolhido = "?category=fighting";
+            filtro_escolhido = "&category=fighting";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos();
         break;
     
         case('Shooting'):
-        filtro_escolhido = "?category=shooter";
+        filtro_escolhido = "&category=shooter";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos();
         break;
 
         case('Fantasy'):
-        filtro_escolhido = "?category=fantasy";
+        filtro_escolhido = "&category=fantasy";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos();
         break;
 
         case('Card game'):
-        filtro_escolhido = "?category=card";
+        filtro_escolhido = "&category=card";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos();
         break;
 
         case('Strategy'):
-            filtro_escolhido = "?category=strategy";
+            filtro_escolhido = "&category=strategy";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos();
         break;
 
         case('Sports'):
-        filtro_escolhido = "?category=sports";
+        filtro_escolhido = "&category=sports";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos();
         break;
-
-
     }
     
 } 
+
+function plataforma(filtro_plataforma){
+    switch(filtro_plataforma){
+        case('PC'):
+        plataforma_escolhida="pc";
+        apagar();
+        ConsultarJogos();
+        break;
+
+        case('Browser'):
+        plataforma_escolhida="browser";
+        apagar();
+        ConsultarJogos();
+        break;
+
+        case('ALL'):
+        plataforma_escolhida="all";
+        apagar();
+        ConsultarJogos();
+        break;
+
+        case('Reset'):
+        filtro_escolhido="";
+        plataforma_escolhida="all";
+        apagar();
+        ConsultarJogos();
+        break;
+    }
+}
