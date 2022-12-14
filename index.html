@@ -10,11 +10,13 @@
   <body>
     <div class="tudo">
       <nav>
+       
+        
         <ul id="Ulnav">
-          <li>PC</li>
-          <li>Browser</li>
-          <li>All</li>
-          <li>Favoritos</li>
+          <li> <button onclick="plataforma('PC')">PC</button></li>
+          <li><button onclick="plataforma('Browser')">Browser</button></li>
+          <li><button onclick="plataforma('ALL')">ALL</button></li>
+          <li><button ><a  id="favorites-link" >Favoritos</a></button></li>
         </ul>
         <input class="pesquisa" type="text" placeholder="Pesquisa">
       </nav>
@@ -28,7 +30,7 @@
               height="40px"
               width="40px"
             />
-
+              
             <ul id="lista_menu">
               <li class="textopc"><a href="#" onclick="filtrar('Moba');mostrarAtivo(this);">MOBA</a></li>
               <li class="textopc"><a href="#" onclick="filtrar('Survival');mostrarAtivo(this);">Survival</a></li>
@@ -50,7 +52,6 @@
           <h1>Jogos de destaque</h1>
         </center>
         <div id="dive"></div>
-        <button onclick="adicionar()" id="botao">Carregar Mais</button>
       </main>
     </div>
     <script src="./index.js"></script>

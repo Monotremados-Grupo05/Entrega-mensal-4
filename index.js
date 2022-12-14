@@ -9,7 +9,9 @@ const options = {
 const dive = document.getElementById("dive");  //variavel que recebe o getelementbyid para nao ter que ficar escrevendo isso toda vez
 var a = 0;                                     //variavel para controle de quantidade de jogos que irao aparecer na tela
 var b = 10;                                    //variavel para controle de quantidade de jogos que irao aparecer na tela
-var filtro_escolhido=""
+var filtro_escolhido="";
+var plataforma_escolhida="all";
+
 
 var favoritos = JSON.parse(localStorage.getItem('favs')) || [];
 var resultados = []
@@ -47,8 +49,8 @@ function handleFavClick(index, btnid) {
 
 const name = document.querySelector(".textopc");
 
-function consultaDadosViaCep(){                //funcao que realiza o fetch
-    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${filtro_escolhido}`, options)
+function   ConsultarJogos(){                //funcao que realiza o fetch
+    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataforma_escolhida}${filtro_escolhido}`, options)
 	.then((response) => {
         response.json()                        //Transformo os dados em json
             .then(data => printar(data));      // envio os dados chamando funcao printar indicando o parametro data (sendo os proprios dados)
@@ -84,12 +86,12 @@ const printar = (resultado) =>{                //Funcao que printa os dados da A
         a=0; b=10;
     }                                         //o usuario modifique o padrao de aparecimento sei la vai apagar tudo e escrever de outro jeito
 
-    consultaDadosViaCep();                   //Aqui nesse caso eu to chamando a funcao apenas
+    ConsultarJogos();                  //Aqui nesse caso eu to chamando a funcao apenas
 
     function adicionar(){                   //Funcao adicionar para alterar as variaveis que definem a quantidade de jogos que irao aparecer
     a = b;                                  // na tela do usuario, ela eh chamada ao clicar no botao carregar mais
     b = b+10;                               //Alem de alterar as variaveis ela chama a funcao consultardadosviacep pra printar novamente
-    consultaDadosViaCep();
+    ConsultarJogos(); 
 }
 function filtrar(filtro_botao){
     console.log(filtro_botao);
@@ -97,57 +99,87 @@ function filtrar(filtro_botao){
     switch(filtro_botao){
     
         case('Moba'):
-            filtro_escolhido = "?category=moba";
+            filtro_escolhido = "&category=moba";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos(); 
         break;
 
         case('Survival'):
-            filtro_escolhido = "?category=survival";
+            filtro_escolhido = "&category=survival";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos(); 
         break;
 
         case('Fighting'):
-            filtro_escolhido = "?category=fighting";
+            filtro_escolhido = "&category=fighting";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos();
         break;
     
         case('Shooting'):
-        filtro_escolhido = "?category=shooter";
+        filtro_escolhido = "&category=shooter";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos(); 
         break;
 
         case('Fantasy'):
-        filtro_escolhido = "?category=fantasy";
+        filtro_escolhido = "&category=fantasy";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos(); 
         break;
 
         case('Card game'):
-        filtro_escolhido = "?category=card";
+        filtro_escolhido = "&category=card";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos(); 
         break;
 
         case('Strategy'):
-            filtro_escolhido = "?category=strategy";
+            filtro_escolhido = "&category=strategy";
             apagar();
-            consultaDadosViaCep();
+            ConsultarJogos(); 
         break;
 
         case('Sports'):
-        filtro_escolhido = "?category=sports";
+        filtro_escolhido = "&category=sports";
         apagar();
-        consultaDadosViaCep();
+        ConsultarJogos(); 
         break;
 
 
     }
     
 } 
+
+
+function plataforma(filtro_plataforma){
+    switch(filtro_plataforma){
+        case('PC'):
+        plataforma_escolhida="pc";
+        apagar();
+        ConsultarJogos();
+        break;
+
+        case('Browser'):
+        plataforma_escolhida="browser";
+        apagar();
+        ConsultarJogos();
+        break;
+
+        case('ALL'):
+        plataforma_escolhida="all";
+        apagar();
+        ConsultarJogos();
+        break;
+
+        case('Reset'):
+        filtro_escolhido="";
+        plataforma_escolhida="all";
+        apagar();
+        ConsultarJogos();
+        break;
+    }
+}
 
 function mostrarAtivo(tag){
     var tag_li = document.getElementById('lista_menu');
@@ -157,14 +189,23 @@ function mostrarAtivo(tag){
        tag_a[i].style.backgroundColor = "";
     }
        tag.style.backgroundColor = "#660920";
-       
 }
 
 //
 
+const favoriteslink = document.getElementById("favorites-link")
+favoriteslink.addEventListener("click", () => {
+    apagar();
+    filtro_escolhido = "favoritos"
+    printar(favoritos)
+});
+
 
 window.onscroll = function() {
     if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-        adicionar()
+        if( filtro_escolhido != "favoritos") {
+            adicionar()
+        }
+        
     }
    }
