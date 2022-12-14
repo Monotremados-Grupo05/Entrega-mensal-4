@@ -11,6 +11,7 @@ var a = 0;                                     //variavel para controle de quant
 var b = 10;                                    //variavel para controle de quantidade de jogos que irao aparecer na tela
 var filtro_escolhido=""
 
+
 var favoritos = JSON.parse(localStorage.getItem('favs')) || [];
 var resultados = []
 
@@ -162,9 +163,19 @@ function mostrarAtivo(tag){
 
 //
 
+const favoriteslink = document.getElementById("favorites-link")
+favoriteslink.addEventListener("click", () => {
+    apagar();
+    filtro_escolhido = "favoritos"
+    printar(favoritos)
+});
+
 
 window.onscroll = function() {
     if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-        adicionar()
+        if( filtro_escolhido != "favoritos") {
+            adicionar()
+        }
+        
     }
    }
