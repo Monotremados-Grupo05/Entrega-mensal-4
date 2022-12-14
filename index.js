@@ -27,6 +27,8 @@ function isInFavorite(id) {
     return false
 }
 
+
+
 function handleFavClick(index, btnid) {
    for(i=0; i < favoritos.length; i++) {
         if(resultados[index].id === favoritos[i].id) {
@@ -157,3 +159,12 @@ function mostrarAtivo(tag){
        tag.style.backgroundColor = "#660920";
        
 }
+
+//
+
+
+window.onscroll = function() {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+        adicionar()
+    }
+   }
