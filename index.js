@@ -115,3 +115,17 @@ function mostrarAtivo(tag){
        tag.style.color = "#ff0000";
        
 }
+
+
+
+
+
+
+const barinhadebaixo = document.querySelector(".barinha-de-baixo");
+
+const inputSearch = document.querySelector(".input[type='pesquisa'");
+
+let nomes = [];
+
+
+fetch
