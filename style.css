@@ -95,22 +95,43 @@ h1 {
   margin-right: 5vh;
 }
 .fotos {
-  display: flex;
-  margin-top: 2vw;
+  position: absolute;
+  display: grid;
   margin-left: 40px;
-  width: 1px;
+}
+
+.img{
+  position: relative;
+  display: grid;
+  padding-bottom: 30px;
+  height: 40px;
+  width:  40px;
+  right: 10%;
+  top: 110%;
 }
 
 .textopc {
   color: aliceblue;
   font-size: 160%;
-
   border: 0;
   cursor: pointer;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-bottom: 20%;
+  margin-bottom: 25%;
   width: 11vw;
 }
+
+#lista_menu{
+  position: relative;
+  display: grid;
+  bottom: 80%;
+  text-decoration:none;
+  color:#FFFFFF;
+  padding-bottom: 20px;
+}
+
+
+
+
 
 #dive {
   display: flex;
@@ -182,10 +203,7 @@ p {
   background-color:transparent
 }
 
-#lista_menu{
-  text-decoration:none;
-  color:#FFFFFF;
-}
+
 a{
   text-decoration:none;
   color:#FFFFFF;

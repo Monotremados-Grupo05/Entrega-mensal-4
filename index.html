@@ -11,23 +11,24 @@
     <div class="tudo">
       <nav>
         <ul id="Ulnav">
-          <li>PC</li>
-          <li>Browser</li>
-          <li>All</li>
-          <li><a  id="favorites-link" >Favoritos</a></li>
+          <li ><a href="#" onclick="plataforma('PC');mostrarAtivo_plat(this);">PC</a></li>
+          <li ><a href="#" onclick="plataforma('Browser');mostrarAtivo_plat(this);">Browser</a></li>
+          <li ><a href="#" onclick="plataforma('ALL');mostrarAtivo_plat(this);">ALL</a></li>
+          <li><a id="favorites-link" onclick="mostrarAtivo_plat(this);" >Favoritos</a></li>
         </ul>
         <input class="pesquisa" type="text" placeholder="Pesquisa">
       </nav>
       <aside>
         <section class="opcs2">
           <div id= "fotos" class="fotos">
-            <img
-              class="img"
-              src="./img/moba.png"
-              alt=""
-              height="40px"
-              width="40px"
-            />
+            <img class="img"src="./img/moba.png"alt=""/>
+            <img class="img"src="./img/Survival.png"alt=""/>
+            <img class="img"src="./img/Fighting.png"alt=""/>
+            <img class="img"src="./img/Shooting.png"alt=""/>
+            <img class="img"src="./img/Fantasy.png"alt=""/>
+            <img class="img"src="./img/Card game.png"alt=""/>
+            <img class="img"src="./img/Strategy.png"alt=""/>
+            <img class="img"src="./img/Sports.png"alt=""/>
 
             <ul id="lista_menu">
               <li class="textopc"><a href="#" onclick="filtrar('Moba');mostrarAtivo(this);">MOBA</a></li>
@@ -50,7 +51,6 @@
           <h1>Jogos de destaque</h1>
         </center>
         <div id="dive"></div>
-        <button onclick="adicionar()" id="botao">Carregar Mais</button>
       </main>
     </div>
     <script src="./index.js"></script>
