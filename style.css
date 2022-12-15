@@ -74,9 +74,9 @@ main {
   width: 80%;
 }
 .imgtest {
-  width: 100%;
+  width: 72.3%;
+    border-radius: 4vh 0px 0vh 4vh;
     height: 100%;
-    border-radius: 2vw;
 }
 .banner {
   border-radius: 2vw;
@@ -84,6 +84,32 @@ main {
   height: 25vw;
   box-shadow: 2px 2px 10px black;
   
+}
+
+.destaque-baner{
+  width: 27.7%;
+  background-color: #660920;
+  height: 100%;
+  float: right;
+  border-radius: 0vh 4vh 4vh 0vh;
+}
+
+.texto-jogo-baner{
+  color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
+.gif{
+
+  WIDTH: 100%;
+
+}
+.gif-destaque{
+
+  background-image: url(./gif/elden-ring.gif);
+
 }
 
 
