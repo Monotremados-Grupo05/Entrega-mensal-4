@@ -6,10 +6,13 @@ const options = {
 	}
 };                                             //Logando na API pra receber os dados
 
-const dive = document.getElementById("dive");  //variavel que recebe o getelementbyid para nao ter que ficar escrevendo isso toda vez
+const dive = document.getElementById("dive");
+const banner = document.getElementById("bannerjs");
+  //variavel que recebe o getelementbyid para nao ter que ficar escrevendo isso toda vez
+var idsalva=0;
 var a = 0;                                     //variavel para controle de quantidade de jogos que irao aparecer na tela
 var b = 10;                                    //variavel para controle de quantidade de jogos que irao aparecer na tela
-var filtro_escolhido="";
+var filtro_escolhido="&sort-by=popularity";
 var plataforma_escolhida="all";
 var favoritos = JSON.parse(localStorage.getItem('bullla')) || [];
 var resultados = [];
@@ -51,10 +54,39 @@ function ConsultarJogos(){                //funcao que realiza o fetch
         .catch(()=> alert("ERRO"));            //Alerta de erro, caso encontre algum
 }
 
-const printar = (resultado) =>{                //Funcao que printa os dados da API na tela do usuario
+function fetchbanner() {
+    //funcao que realiza o fetch
+    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${idsalvo}`, options)
+      .then((response) => {
+        response
+          .json() //Transformo os dados em json
+          .then((data) => printarbanner(data));    
+      })
+      .catch(() => alert("ERRO")); 
+  }
+
+  const printarbanner = (resultado) => {
+    //Funcao que printa os dados da API na tela do usuario
+    //for (a; a < b; a++) {
+      resultados = resultado; //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
+      console.log(resultado);
+        banner.innerHTML = `
+        <a href="${resultado.freetogame_profile_url}"target="_blank">
+              <img class="imgtest" src="${resultado.screenshots[1].image}"</a>
+              `
+              ;
+}
+
+
+const printar = (resultado) =>{   
+
+        idsalvo=resultado[0].id;
+        fetchbanner();
+               //Funcao que printa os dados da API na tela do usuario
     for(a;a<b;a++){            
         resultados = resultado                //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
-        console.log(resultado[a]);       //o botao os valores das variaveis irao ser alteradas para que seja printado mais
+        console.log(resultado[a]);    
+           //o botao os valores das variaveis irao ser alteradas para que seja printado mais
         dive.innerHTML += `
         <div class="vitrine">
         <a href="${resultado[a].freetogame_profile_url}"target="_blank">
@@ -89,7 +121,7 @@ function adicionar(){                   //Funcao adicionar para alterar as varia
 function filtrar(filtro_botao){
     switch(filtro_botao){
         case('Home'):
-            filtro_escolhido = "";
+            filtro_escolhido = "&sort-by=popularity";
             apagar();
             ConsultarJogos();
         break;

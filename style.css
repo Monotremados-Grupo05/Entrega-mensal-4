@@ -78,7 +78,7 @@ main {
     border-radius: 4vh 0px 0vh 4vh;
     height: 100%;
 }
-.banner {
+#bannerjs {
   border-radius: 2vw;
   width: 60vw;
   height: 25vw;
