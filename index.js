@@ -13,6 +13,7 @@ var idsalva = 0;
 var a = 0; //variavel para controle de quantidade de jogos que irao aparecer na tela
 var b = 10; //variavel para controle de quantidade de jogos que irao aparecer na tela
 var filtro_escolhido = "&sort-by=popularity";
+var salvofavorito = false;
 var plataforma_escolhida = "all";
 var favoritos = JSON.parse(localStorage.getItem("bulla")) || [];
 var resultados = [];
@@ -73,10 +74,10 @@ function fetchbanner() {
 }
 
 const printarbanner = (resultado) => {
-  //Funcao que printa os dados da API na tela do usuario
-  //for (a; a < b; a++) {
-  resultados = resultado; //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
   console.log(resultado);
+  if (!resultado) {
+    return;
+  }
   banner.innerHTML = `
 
   <div class="destaque-baner">
@@ -87,22 +88,25 @@ const printarbanner = (resultado) => {
     </div>
 </div>
 
-
-        <a href="${resultado.freetogame_profile_url}"target="_blank">
-              <img class="imgbanner1" src="${resultado.screenshots[0].image}"</a>
-
-
+<video autoplay="true" loop="true" class="imgbanner1">
+<source src="https://www.freetogame.com/g/${idsalva}/videoplayback.webm" type="video/webm">
+</video>
               `;
 };
 
 const printar = (resultado) => {
+  if (!resultado || resultado.length < 1) {
+    return;
+  }
+  if (a == 0) {
     idsalva = resultado[0].id;
-  fetchbanner();
+    fetchbanner();
+  }
   //Funcao que printa os dados da API na tela do usuario
+  resultados = resultado;
+  console.log(resultado);
   for (a; a < b; a++) {
-    resultados = resultado; //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
     console.log(resultado[a]);
-    //o botao os valores das variaveis irao ser alteradas para que seja printado mais
     dive.innerHTML += `
         <div class="vitrine">
         <a href="${resultado[a].freetogame_profile_url}"target="_blank">
@@ -244,13 +248,14 @@ const favoriteslink = document.getElementById("favorites-link");
 
 favoriteslink.addEventListener("click", () => {
   apagar();
-  filtro_escolhido = "favoritos";
+
+  salvofavorito = true;
   printar(favoritos);
 });
 
 window.onscroll = function () {
   if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-    if (filtro_escolhido != "favoritos") {
+    if (!salvofavorito) {
       adicionar();
     }
   }
