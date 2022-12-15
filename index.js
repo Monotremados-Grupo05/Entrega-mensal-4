@@ -14,11 +14,12 @@ var a = 0; //variavel para controle de quantidade de jogos que irao aparecer na 
 var b = 10; //variavel para controle de quantidade de jogos que irao aparecer na tela
 var filtro_escolhido = "&sort-by=popularity";
 var plataforma_escolhida = "all";
-var favoritos = JSON.parse(localStorage.getItem("bulla")) || [];
+var inFavoritos = false;
+var favoritos = JSON.parse(localStorage.getItem("favs")) || [];
 var resultados = [];
 const name = document.querySelector(".textopc");
 function updateLocalStorage() {
-  localStorage.setItem("bulla", JSON.stringify(favoritos));
+  localStorage.setItem("favs", JSON.stringify(favoritos));
 }
 
 function isInFavorite(id) {
@@ -96,6 +97,9 @@ const printarbanner = (resultado) => {
 };
 
 const printar = (resultado) => {
+    if(resultado.length < 1) {
+      return
+    }
     idsalva = resultado[0].id;
   fetchbanner();
   //Funcao que printa os dados da API na tela do usuario
@@ -244,13 +248,13 @@ const favoriteslink = document.getElementById("favorites-link");
 
 favoriteslink.addEventListener("click", () => {
   apagar();
-  filtro_escolhido = "favoritos";
+  inFavoritos = true;
   printar(favoritos);
 });
 
 window.onscroll = function () {
   if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-    if (filtro_escolhido != "favoritos") {
+    if (!inFavoritos) {
       adicionar();
     }
   }
