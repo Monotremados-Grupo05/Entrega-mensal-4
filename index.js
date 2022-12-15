@@ -14,11 +14,11 @@ var a = 0; //variavel para controle de quantidade de jogos que irao aparecer na 
 var b = 10; //variavel para controle de quantidade de jogos que irao aparecer na tela
 var filtro_escolhido = "&sort-by=popularity";
 var plataforma_escolhida = "all";
-var favoritos = JSON.parse(localStorage.getItem("bulla")) || [];
+var favoritos = JSON.parse(localStorage.getItem("bulllla")) || [];
 var resultados = [];
 const name = document.querySelector(".textopc");
 function updateLocalStorage() {
-  localStorage.setItem("bulla", JSON.stringify(favoritos));
+  localStorage.setItem("bulllla", JSON.stringify(favoritos));
 }
 
 function isInFavorite(id) {
