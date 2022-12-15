@@ -70,11 +70,21 @@ function fetchbanner() {
     //for (a; a < b; a++) {
       resultados = resultado; //For para que inicialmente eu printe apenas 10 elementos, porem quando o usuario apertar
       console.log(resultado);
-        banner.innerHTML = `
-        <a href="${resultado.freetogame_profile_url}"target="_blank">
-              <img class="imgtest" src="${resultado.screenshots[1].image}"</a>
-              `
-              ;
+        banner.innerHTML = `<div class="destaque-baner">
+  
+        <div class="gif-destaque">
+          <img class="gif" src="${resultado.thumbnail}" alt="">
+          <img class="gif" src="${resultado.screenshots[2].image}" alt="">
+          <h1 class="texto-jogo-baner">${resultado.title}</h1>
+        </div>
+    </div>
+    
+    
+            <a href="${resultado.freetogame_profile_url}"target="_blank">
+                  <img class="imgbanner1" src="${resultado.screenshots[0].image}"</a>
+    
+    
+                  `;
 }
 
 
