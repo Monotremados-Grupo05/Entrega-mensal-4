@@ -41,6 +41,15 @@ nav {
   background-color: #660920;
 }
 
+.navlink {
+  color: aliceblue;
+  font-size: 140%;
+  border: 0;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: 11vw;
+}
+
 .pesquisa {
   border: 0;
   border-radius: 0.5vw;
@@ -142,7 +151,7 @@ h1 {
 .img {
   position: relative;
   display: grid;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   height: 40px;
   width: 40px;
   right: 10%;
@@ -163,12 +172,30 @@ h1 {
 #lista_menu {
   position: relative;
   display: grid;
+  gap: 8px;
   bottom: 82%;
   text-decoration: none;
   color: #ffffff;
-  padding-bottom: 65px;
+  padding-bottom: 95px;
   left: 20%;
   margin-top:50%;
+} 
+
+.title-home {
+  background: #660920;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+#favorites-link{
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #dive {
@@ -183,7 +210,7 @@ h1 {
   margin-top: 1%;
   margin-right: 1%;
   background-color: #660920;
-  max-width: 30%;
+  max-width: 100%;
 }
 .fotojogo {
   height: 180px;
@@ -256,6 +283,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
+  
 }
 
 
