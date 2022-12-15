@@ -1,23 +1,23 @@
-body{
-    background-color: #2E000C;
-    color: white;
+body {
+  background-color: #2e000c;
+  color: white;
 }
 
-#botao{
-    width: 339px;
-    height: 70px;
-    left: 1016px;
-    top: 1351px;
-    color:white;
-    background: #600117;
-    border-radius: 12px;
-    cursor:pointer;
-  }
-#filtros{
-    position: relative;
-    display: inline;
-    width: 70px;
-    height: 20px;
+#botao {
+  width: 339px;
+  height: 70px;
+  left: 1016px;
+  top: 1351px;
+  color: white;
+  background: #600117;
+  border-radius: 12px;
+  cursor: pointer;
+}
+#filtros {
+  position: relative;
+  display: inline;
+  width: 70px;
+  height: 20px;
 }
 
 body {
@@ -29,7 +29,6 @@ body {
   margin-top: 2vw;
 }
 nav {
-    
   border-radius: 1vw;
   position: absolute;
   display: flex;
@@ -39,26 +38,25 @@ nav {
   height: 7.5%;
   left: 25%;
   background-color: #660920;
-  
 }
 
 .pesquisa {
-    border: 0;
-    border-radius: 0.5vw;
-    background-color: #54081b;
-    color: #FFFFFF;
-    
-    width: 30%;
+  border: 0;
+  border-radius: 0.5vw;
+  background-color: #54081b;
+  color: #ffffff;
+
+  width: 30%;
   height: 40%;
   margin-top: 1.7%;
 
   margin-right: 1%;
-  }
-  .pesquisa::placeholder{
-    border-color: black;
-      padding-left: 3%;
-      color: rgb(255, 255, 255);
-  }
+}
+.pesquisa::placeholder {
+  border-color: black;
+  padding-left: 3%;
+  color: rgb(255, 255, 255);
+}
 aside {
   position: fixed;
   width: 10vw;
@@ -73,20 +71,14 @@ main {
   padding-top: 5%;
   width: 80%;
 }
-.imgtest {
-  width: 72.3%;
-    border-radius: 4vh 0px 0vh 4vh;
-    height: 100%;
-}
-#bannerjs {
-  border-radius: 2vw;
-  width: 60vw;
-  height: 25vw;
-  box-shadow: 2px 2px 10px black;
-  
+
+.imgbanner2 {
+  height: 30%;
+  width: 30%;
+  border-radius: 4vh 0px 0vh 4vh;
 }
 
-.destaque-baner{
+.destaque-baner {
   width: 27.7%;
   background-color: #660920;
   height: 100%;
@@ -94,30 +86,44 @@ main {
   border-radius: 0vh 4vh 4vh 0vh;
 }
 
-.texto-jogo-baner{
+.texto-jogo-baner {
   color: white;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-
-.imgbanner1{
-  width: 72.3%;
-    height: 100%;
+.gif {
+  border-radius: 0px 3.3vh 0px 0px;
+  width: 100%;
+  height: 12.3vw;
 }
-
-.gif{
-
-  WIDTH: 100%;
-
+.gif2 {
+  margin-top: 2%;
+  border-radius: 0px 0px 3.3vh 0px;
+  width: 100%;
+  height: 12.4vw;
 }
-.gif-destaque{
+.imgbanner1 {
+  background-color: #3d3d3d;
 
-  background-image: url(./gif/elden-ring.gif);
-
+  width: 71.7%;
+  border-radius: 3.3vh 0px 0vh 3.3vh;
+  height: 100%;
 }
-
-
+.gif-destaque {
+  background-color: #660920;
+  border-radius: 4vh 4vh 4vh 4vh;
+  display: flex;
+  flex-direction: column;
+}
+#bannerjs {
+  border: 0.25vw solid #660920;
+  background-color: #660920;
+  border-radius: 2vw;
+  width: 60vw;
+  height: 25vw;
+  box-shadow: 2px 2px 10px black;
+}
 
 h1 {
   color: aliceblue;
@@ -131,15 +137,15 @@ h1 {
   margin-left: 40px;
 }
 
-.img{
+.img {
   position: relative;
-    display: grid;
-    padding-bottom: 30px;
-    height: 40px;
-    width: 40px;
-    right: 10%;
-    top: 60%;
-    left: 10%;
+  display: grid;
+  padding-bottom: 30px;
+  height: 40px;
+  width: 40px;
+  right: 10%;
+  top: 60%;
+  left: 10%;
 }
 
 .textopc {
@@ -147,31 +153,26 @@ h1 {
   font-size: 160%;
   border: 0;
   cursor: pointer;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-bottom: 25%;
   width: 11vw;
 }
 
-#lista_menu{
+#lista_menu {
   position: relative;
   display: grid;
   bottom: 82%;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-bottom: 65px;
   left: 20%;
 }
-
-
-
-
 
 #dive {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 50px;
-  
 }
 .vitrine {
   border-radius: 3%;
@@ -179,32 +180,20 @@ h1 {
   margin-top: 1%;
   margin-right: 1%;
   background-color: #660920;
-  
 }
 .fotojogo {
   height: 180px;
   width: 100%;
   border-radius: 3% 3% 0% 0%;
-  
 }
 
 p {
   font-size: larger;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.teste {
-  width: 100%;
-  height: 300%;
-  background-color: brown;
-}
 
 .nomedojogo {
-  
- 
   color: aliceblue;
-  
- 
-  
 }
 
 .like-btn {
@@ -218,48 +207,45 @@ p {
   color: aqua;
 }
 
-#botao{
+#botao {
   width: 339px;
   height: 70px;
   left: 1016px;
   top: 1351px;
-  color:white;
+  color: white;
   background: #600117;
   border-radius: 12px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-
-.aw-menu > li a:hover, .aw-menu > li a:focus {
+.aw-menu > li a:hover,
+.aw-menu > li a:focus {
   background-color: #dfdfdf;
 }
 .aw-menu > li a {
-  background-color:transparent
+  background-color: transparent;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
 
-a{
-  text-decoration:none;
-  color:#FFFFFF;
-  
-  border-radius:10%;
+  border-radius: 10%;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-#Ulnav{
-  color:white;
-  float:left;
-  display:flex;
+#Ulnav {
+  color: white;
+  float: left;
+  display: flex;
   justify-content: space-around;
-  width:100vw;
-  align-items:center;
+  width: 100vw;
+  align-items: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
-
 
 .card-base-container {
   display: flex;
